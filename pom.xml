@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>edu.isi.bmkeg</groupId>
 	<artifactId>bmkeg-parent</artifactId>
-	<version>1.2.0-SNAPSHOT</version>
+	<version>1.1.5-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>bmkeg-parent</name>
 
-	<!-- <parent> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-parent</artifactId>
+	<!-- <parent> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-parent</artifactId> 
 		<version>0.5.0.BUILD-SNAPSHOT</version> </parent> -->
 
 	<properties>
@@ -15,7 +15,7 @@
 		<spring.security.version>3.2.0.RC2</spring.security.version>
 		<tiles.version>3.0.1</tiles.version>
 
-		<!-- Note that setting the slf4j version higher than 1.5.5 leads to IllegalAccessError
+		<!-- Note that setting the slf4j version higher than 1.5.5 leads to IllegalAccessError 
 			exceptions -->
 		<slf4j.version>1.7.5</slf4j.version>
 		<trove.version>3.0.3</trove.version>
@@ -23,7 +23,8 @@
 
 		<thymeleaf.version>2.0.15</thymeleaf.version>
 		<spring-ws.version>2.0.0.RELEASE</spring-ws.version>
-		<cleartk.version>2.0.1-SNAPSHOT</cleartk.version>
+		<!--<cleartk.version>2.0.1-SNAPSHOT</cleartk.version>-->
+		<cleartk.version>2.0.0</cleartk.version>
 		<spring-flex.version>1.5.2.RELEASE</spring-flex.version>
 		<blazeds.version>4.0.0.14931</blazeds.version>
 		<flexmojos.version>4.2-beta</flexmojos.version>
@@ -81,19 +82,24 @@
 			<name>Gully APC Burns</name>
 			<email>GullyBurns@gmail.com</email>
 		</developer>
+		<developer>
+			<id>marcelotallis</id>
+			<name>Marcelo Tallis</name>
+			<email>marcelotallis@gmail.cm</email>
+		</developer>
 	</developers>
 
 	<repositories>
 
-		<!-- There are two versions of Spring artifacts that are hosted in two
-			different places: the Enterprise Bundle Repository (EBR) maintained by SpringSource
-			and Maven Central. The Spring artifacts in one repository are different from
-			the other, they follow a different naming scheme (group name is appended
-			to artifact name) and shouldn't be mixed with the artifacts from the other
-			repository. The artifacts in EBR are OSGi compatible and undergo extensive
-			QA performed by the Spring team. If using the Spring artifacts from EBR then
-			all dependencies like Hibernate and slf4j should also be obtained from EBR.
-			EBR artifacts can be searched at: http://www.springsource.com/repository.
+		<!-- There are two versions of Spring artifacts that are hosted in two 
+			different places: the Enterprise Bundle Repository (EBR) maintained by SpringSource 
+			and Maven Central. The Spring artifacts in one repository are different from 
+			the other, they follow a different naming scheme (group name is appended 
+			to artifact name) and shouldn't be mixed with the artifacts from the other 
+			repository. The artifacts in EBR are OSGi compatible and undergo extensive 
+			QA performed by the Spring team. If using the Spring artifacts from EBR then 
+			all dependencies like Hibernate and slf4j should also be obtained from EBR. 
+			EBR artifacts can be searched at: http://www.springsource.com/repository. 
 			Maven Central Artifacts can be searched at: http://search.maven.org. -->
 
 		<repository>
@@ -119,10 +125,22 @@
 
 		<!-- BigData Repository -->
 
-		<!-- <repository>
+<!--		<repository>
 			<id>bigdata.releases</id>
 			<url>http://www.systap.com/maven/releases</url>
-		</repository> -->
+			<releases>
+		            <enabled>false</enabled>
+		        </releases>
+		        <snapshots>
+		            <enabled>false</enabled>
+		        </snapshots>
+		</repository>
+-->
+		<repository>
+                        <id>edu.isi.colo-pm2</id>
+                        <name>http://colo-pm2.isi.edu</name>
+                        <url>http://colo-pm2.isi.edu:8081/nexus/content/repositories/public</url>
+                </repository>
 
 		<!-- JBoss Repository -->
 
@@ -134,11 +152,11 @@
 
 		<!-- JSI Repository on SourceForge -->
 
-		<repository>
+		<!--<repository>
 			<id>jsi.sourceforge.net</id>
 			<name>sourceforge jsi repository</name>
 			<url>http://sourceforge.net/projects/jsi/files/m2_repo</url>
-		</repository>
+		</repository>-->
 
 		<!-- Luc Moreau's PROV repo -->
 
@@ -148,43 +166,30 @@
 			<url>http://openprovenance.org/java/maven-releases/</url>
 		</repository>
 
-		<!-- BMKEG local repository at ettin.isi.edu
+		<!-- BMKEG local repository at hugin.isi.edu -->
 
 		<repository>
-			<id>ettin-snapshots</id>
-			<name>Ettin ISI MRP repository SNAPSHOTS</name>
-			<url>http://ettin.isi.edu:8081/nexus/content/repositories/snapshots/</url>
+			<id>hugin-snapshots</id>
+			<name>Hugin ISI MRP repository SNAPSHOTS</name>
+			<url>http://hugin.isi.edu:8180/nexus/content/repositories/BMKEG-SNAPSHOT/</url>
 		</repository>
 
 		<repository>
-			<id>ettin-releases</id>
-			<name>Ettin ISI MRP repository RELEASES</name>
-			<url>http://ettin.isi.edu:8081/nexus/content/repositories/releases/</url>
+			<id>hugin-releases</id>
+			<name>Hugin ISI MRP repository RELEASES</name>
+			<url>http://hugin.isi.edu:8180/nexus/content/repositories/releases/</url>
 		</repository>
 
 		<repository>
-			<id>ettin-3rd-party</id>
-			<name>Ettin Third Party Nexus Repository</name>
-			<url>http://ettin.isi.edu:8081/nexus/content/repositories/thirdparty/</url>
-		</repository> -->
-
-		<!-- ISI repositories at ettin.isi.edu -->
-		<repository>
-			<id>isi.nexus.server.thirdparty</id>
-			<name>ISI Third Party Nexus Repository</name>
-			<url>http://colo-pm2.isi.edu:8081/nexus/content/repositories/thirdparty/</url>
+			<id>hugin-3rd-party</id>
+			<name>Hugin Third Party Nexus Repository</name>
+			<url>http://hugin.isi.edu:8180/nexus/content/repositories/thirdparty/</url>
 		</repository>
 
 		<repository>
-			<id>isi.nexus.server.snapshots</id>
-			<name>ISI Snapshots Nexus Repository</name>
-			<url>http://colo-pm2.isi.edu:8081/nexus/content/repositories/snapshots/</url>
-		</repository>
-
-		<repository>
-			<id>isi.nexus.server</id>
-			<name>ISI Snapshots Nexus Repository</name>
-			<url>http://colo-pm2.isi.edu:8081/nexus/content/repositories/public/</url>
+			<id>hugin-3rd-party-snapshot</id>
+			<name>Hugin Third Party Nexus Repository</name>
+			<url>http://hugin.isi.edu:8180/nexus/content/repositories/thirdpartysnapshots/</url>
 		</repository>
 
 		<repository>
@@ -193,8 +198,8 @@
 			<url>http://central.maven.org/maven2/</url>
 		</repository>
 
-		<!-- Hack to fix the BlazeDS versioning problem <repository> <id>SpringFlex</id>
-			<name>SpringFlex Source Repo</name> <url>https://src.springsource.org/svn/spring-flex/tags/spring-flex-1.5.0.RELEASE/local-repo/</url>
+		<!-- Hack to fix the BlazeDS versioning problem <repository> <id>SpringFlex</id> 
+			<name>SpringFlex Source Repo</name> <url>https://src.springsource.org/svn/spring-flex/tags/spring-flex-1.5.0.RELEASE/local-repo/</url> 
 			</repository> -->
 
 		<repository>
@@ -219,9 +224,9 @@
 			<url>http://oss.sonatype.org/content/repositories/snapshots/</url>
 		</pluginRepository>
 
-		<!-- <pluginRepository> <id>flexpmd.opensource.adobe</id> <releases> <enabled>true</enabled>
-			</releases> <snapshots> <enabled>false</enabled> </snapshots> <name>FlexPMD
-			repository on opensource.adobe.com</name> <url>http://opensource.adobe.com/svn/opensource/flexpmd/maven-repository/release/</url>
+		<!-- <pluginRepository> <id>flexpmd.opensource.adobe</id> <releases> <enabled>true</enabled> 
+			</releases> <snapshots> <enabled>false</enabled> </snapshots> <name>FlexPMD 
+			repository on opensource.adobe.com</name> <url>http://opensource.adobe.com/svn/opensource/flexpmd/maven-repository/release/</url> 
 			</pluginRepository> -->
 
 		<pluginRepository>
@@ -239,14 +244,14 @@
 
 	<distributionManagement>
 		<repository>
-			<id>isi.nexus.server.releases</id>
-			<name>ISI releases</name>
-			<url>http://colo-pm2.isi.edu:8081/nexus/content/repositories/releases/</url>
+			<id>hugin-releases</id>
+			<name>hugin releases</name>
+			<url>http://hugin.isi.edu:8180/nexus/content/repositories/releases/</url>
 		</repository>
 		<snapshotRepository>
-			<id>isi.nexus.server.snapshots</id>
-			<name>ISI MRP repository SNAPSHOTS</name>
-			<url>http://colo-pm2.isi.edu:8081/nexus/content/repositories/snapshots/</url>
+			<id>hugin-snapshots</id>
+			<name>Hugin ISI MRP repository SNAPSHOTS</name>
+			<url>http://hugin.isi.edu:8180/nexus/content/repositories/BMKEG-SNAPSHOT/</url>
 		</snapshotRepository>
 	</distributionManagement>
 
@@ -255,29 +260,34 @@
 		<dependencies>
 
 			<!-- BMKEG -->
-
+			<dependency>
+                                <groupId>org.apache</groupId>
+                                <artifactId>poi</artifactId>
+                                <version>3.17</version>
+                        </dependency>
+			
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
 				<artifactId>bmkeg-utils</artifactId>
-				<version>1.2.0-SNAPSHOT</version>
+				<version>1.1.5-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
 				<artifactId>uml</artifactId>
-				<version>1.2.0-SNAPSHOT</version>
+				<version>1.1.5-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
 				<artifactId>vpdmfCore</artifactId>
-				<version>1.2.0-SNAPSHOT</version>
+				<version>1.1.5-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
 				<groupId>edu.isi.bmkeg</groupId>
 				<artifactId>vpdmfGenerator</artifactId>
-				<version>1.2.0-SNAPSHOT</version>
+				<version>1.1.5-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
@@ -757,12 +767,12 @@
 				<version>1.4.0</version>
 			</dependency>
 
-			<!-- Cleartk dependency management. This are taken from the cleartk-release
-				artifact. The cleartk documentation asks that cleartk-release dependency
-				management be imported into the project poms by adding cleartk-release as
-				a dependency with scope: import and omitting version information for all
-				other cleartk dependencies added to the pom. Unfortunately, eclipse doesn't
-				handle the import of dependency management so we copied them into our parent
+			<!-- Cleartk dependency management. This are taken from the cleartk-release 
+				artifact. The cleartk documentation asks that cleartk-release dependency 
+				management be imported into the project poms by adding cleartk-release as 
+				a dependency with scope: import and omitting version information for all 
+				other cleartk dependencies added to the pom. Unfortunately, eclipse doesn't 
+				handle the import of dependency management so we copied them into our parent 
 				pom. -->
 			<dependency>
 				<groupId>org.cleartk</groupId>
