@@ -271,16 +271,6 @@
 			<name>Hugin ISI MRP repository SNAPSHOTS</name>
 			<url>http://hugin.isi.edu:8180/nexus/content/repositories/BMKEG-SNAPSHOT/</url>
 		</snapshotRepository>
-		<repository>
-			<id>isi.nexus.server.releases</id>
-			<name>ISI releases</name>
-			<url>http://colo-pm2.isi.edu:8081/nexus/content/repositories/releases/</url>
-		</repository>
-		<snapshotRepository>
-			<id>isi.nexus.server.snapshots</id>
-			<name>ISI MRP repository SNAPSHOTS</name>
-			<url>http://colo-pm2.isi.edu:8081/nexus/content/repositories/snapshots/</url>
-		</snapshotRepository>
 	</distributionManagement>
 
 	<dependencyManagement>
