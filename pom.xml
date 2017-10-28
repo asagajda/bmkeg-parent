@@ -142,6 +142,24 @@
                         <url>http://colo-pm2.isi.edu:8081/nexus/content/repositories/public</url>
                 </repository>
 
+		<repository>
+			<id>isi.nexus.server.thirdparty</id>
+			<name>ISI Third Party Nexus Repository</name>
+			<url>http://colo-pm2.isi.edu:8081/nexus/content/repositories/thirdparty/</url>
+		</repository>	
+
+		<repository>
+			<id>isi.nexus.server.snapshots</id>
+			<name>ISI Snapshots Nexus Repository</name>
+			<url>http://colo-pm2.isi.edu:8081/nexus/content/repositories/snapshots/</url>
+		</repository>	
+
+		<repository>
+			<id>isi.nexus.server</id>
+			<name>ISI Snapshots Nexus Repository</name>
+			<url>http://colo-pm2.isi.edu:8081/nexus/content/repositories/public/</url>
+		</repository>
+
 		<!-- JBoss Repository -->
 
 		<repository>
@@ -252,6 +270,16 @@
 			<id>hugin-snapshots</id>
 			<name>Hugin ISI MRP repository SNAPSHOTS</name>
 			<url>http://hugin.isi.edu:8180/nexus/content/repositories/BMKEG-SNAPSHOT/</url>
+		</snapshotRepository>
+		<repository>
+			<id>isi.nexus.server.releases</id>
+			<name>ISI releases</name>
+			<url>http://colo-pm2.isi.edu:8081/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>isi.nexus.server.snapshots</id>
+			<name>ISI MRP repository SNAPSHOTS</name>
+			<url>http://colo-pm2.isi.edu:8081/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
 
